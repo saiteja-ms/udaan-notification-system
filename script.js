@@ -13,7 +13,7 @@ function showNotification(setup, punchline) {
     const notificationContainer = document.getElementById("notificationContainer");
     const notificationSound = document.getElementById("notificationSound");
 
-    notificationContainer.innerHTML = `<strong>${setup}</strong><p>${punchline}</p>`
+    notificationContainer.innerHTML = `<strong>${setup}</strong><p>${punchline}</p>`;
       
     notificationContainer.style.display = "block";
     notificationSound.play();
@@ -25,4 +25,5 @@ function showNotification(setup, punchline) {
 }
 
 // Call fetchNotification() every 10 seconds
+fetchNotification();
 setInterval(fetchNotification, 10000);
