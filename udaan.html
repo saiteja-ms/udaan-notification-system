@@ -6,9 +6,15 @@
 </head>
 <body>
     <h1>Notification System</h1>
-    <div class="notification" id="notificationContainer"></div>
+    <div class="notification" id="notificationContainer">
+        <img src="notification-icon.png" alt="Notification Icon">
+        <div class="notification-content">
+            <h2 id="notificationTitle"></h2>
+            <p id="notificationMessage"></p>
+        </div>
+    </div>
 
-    <audio id="notificationSound" src="rickroll.mp3" preload="auto"></audio>
+    <audio id="notificationSound" src="rickroll.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
