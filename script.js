@@ -13,10 +13,10 @@ function showNotification(setup, punchline) {
     const notificationContainer = document.getElementById("notificationContainer");
     const notificationSound = document.getElementById("notificationSound");
 
-    notificationContainer.innerHTML = <><strong>${setup}</strong><p>${punchline}</p></>
+    notificationContainer.innerHTML = `<strong>${setup}</strong><p>${punchline}</p>`
       
     notificationContainer.style.display = "block";
-    notificationSound.onplay();
+    notificationSound.play();
 
     // Hide the notification after 5 seconds
     setTimeout(() => {
