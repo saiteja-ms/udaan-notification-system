@@ -1,10 +1,46 @@
-.notification{
+.notification {
     position: fixed;
     top: 20px;
     right: 20px;
-    padding: 10px;
+    display: flex;
+    align-items: center;
     background-color: #f1f1f1;
     border: 1px solid #ccc;
     border-radius: 5px;
-    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 300px;
+}
+
+.notification img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-content h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.notification-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 24px;
+    color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
