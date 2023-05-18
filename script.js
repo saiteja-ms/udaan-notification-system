@@ -1,3 +1,7 @@
+// Preload the audio file
+const notificationSound = new Audio("rickroll.mp3");
+notificationSound.preload = "auto";
+
 // Function to fetch the response message from the API
 function fetchNotification() {
     fetch("https://official-joke-api.appspot.com/random_joke")
@@ -11,11 +15,15 @@ function fetchNotification() {
 // Function to display the notification
 function showNotification(setup, punchline) {
     const notificationContainer = document.getElementById("notificationContainer");
-    const notificationSound = document.getElementById("notificationSound");
 
-    notificationContainer.innerHTML = `<strong>${setup}</strong><p>${punchline}</p>`;
-      
-    notificationContainer.style.display = "block";
+    const notificationTitle = document.getElementById("notificationTitle");
+    const notificationMessage = document.getElementById("notificationMessage");
+
+    notificationTitle.textContent = setup;
+    notificationMessage.textContent = punchline;
+  
+    notificationContainer.style.display = "flex";
+    notificationSound.currentTime = 0; // Reset the audio to the beginning
     notificationSound.play();
 
     // Hide the notification after 5 seconds
@@ -24,6 +32,6 @@ function showNotification(setup, punchline) {
     }, 5000);
 }
 
-// Call fetchNotification() every 10 seconds
+// Call fetchNotification() initially and then every 10 seconds
 fetchNotification();
 setInterval(fetchNotification, 10000);
